@@ -31,3 +31,4 @@ sum(dat$Zip*dat$Ext,na.rm=T)
 xData <- getURL(fileXML) # This allows you to use https
 doc <- xmlParse(xData)
 rootNode <- xmlRoot(doc)
+sum(xpathSApply(rootNode, "//zipcode", xmlValue) == "21231")
